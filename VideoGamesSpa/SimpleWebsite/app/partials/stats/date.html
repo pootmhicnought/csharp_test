@@ -1,0 +1,56 @@
+﻿<div id="chartByDate" style="height:500px;"></div>
+<script type="text/javascript">
+	(function ($) {
+		// Total earned
+		var psnDates = [];
+		var xblDates = [];
+
+		$.when(
+			$.getJSON('Content/json/_psnStats.xml.json'),
+			$.getJSON('Content/json/_xblStats.xml.json')
+		).done(function (dataPsn, dataXbl, dataCombined) {
+			for (var i = 0; i < dataPsn[0].PsnStats.AccomplishmentsByDate.length; i++) {
+				var date = dataPsn[0].PsnStats.AccomplishmentsByDate[i];
+				psnDates.push([convertJsonDateTime(date.Date), date.TotalCount]);
+			}
+			for (var i = 0; i < dataXbl[0].XblStats.AccomplishmentsByDate.length; i++) {
+				var date = dataXbl[0].XblStats.AccomplishmentsByDate[i];
+				xblDates.push([convertJsonDateTime(date.Date), date.TotalCount]);
+			}
+
+			psnDates.sort();
+			xblDates.sort();
+
+			var chartByDate = new Highcharts.StockChart(chartOptions);
+		});
+
+		var convertJsonDateTime = function (dateTime) {
+			return parseInt(dateTime.replace(/(^.*\()|([+-].*$)/g, ''));
+		};
+
+		var chartOptions = {
+			chart: {
+				renderTo: 'chartByDate'
+			},
+			tooltip: {
+				shared: true
+			},
+			title: {
+				text: 'Total Achievements/Trophies by Date'
+			},
+			yAxis: {
+				min: 0,
+				title: {
+					text: 'Total earned'
+				}
+			},
+			series: [{
+				name: 'PSN',
+				data: psnDates
+			}, {
+				name: 'XBL',
+				data: xblDates
+			}]
+		};
+	})(jQuery);
+</script>

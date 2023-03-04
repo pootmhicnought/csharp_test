@@ -1,0 +1,43 @@
+﻿<h2>games</h2>
+<div data-ng-controller="GamesController">
+	<p>Total games: {{games.length}}<br />
+		Filter by title: <input type="text" data-ng-model="search.Title" /><br />
+		Filter by console: <select data-ng-model="search.System">
+			<option value=""></option>
+			<option data-ng-repeat="console in consoles">{{console}}</option>
+		</select><br />
+		Filter by purchase location: <select data-ng-model="search.Place">
+			<option value=""></option>
+			<option data-ng-repeat="purchasePlace in purchasePlaces">{{purchasePlace}}</option>
+		</select><br />
+		Quick display: <input type="checkbox" data-ng-model="quickDisplay" />
+	</p>
+	<button class="btn" data-ng-disabled="currentPage == 0" data-ng-click="currentPage=0">
+		First
+	</button>
+	<button class="btn" data-ng-disabled="currentPage == 0" data-ng-click="currentPage=currentPage-1">
+        Previous
+    </button>
+    {{currentPage+1}}/{{numberOfPages()}}
+    <button class="btn" data-ng-disabled="currentPage >= data.length/pageSize - 1" data-ng-click="currentPage=currentPage+1">
+        Next
+    </button>
+	<button class="btn" data-ng-disabled="currentPage >= data.length/pageSize - 1" data-ng-click="currentPage=numberOfPages()-1">
+		Last
+	</button>
+	<div style="margin:1em 0;" data-ng-repeat="game in games | orderBy:'Title' | filter:search | startFrom:currentPage*pageSize | limitTo:pageSize">
+		<span style="font-size:120%;font-weight:bold;">{{game.Title}}</span>
+		- {{game.System}}
+		<div style="margin:1em 0;" data-ng-hide="quickDisplay">
+			Bought {{game.Date}}
+			for ${{game.Price}}
+			at {{game.Place}}
+		</div>
+		<div style="margin:1em 0;" data-ng-show="game.Own=='no' && !quickDisplay">
+			Sold {{game.SellDate}}
+			for ${{game.SellPrice}}
+			at {{game.SellPlace}}
+		</div>
+		<div style="font-style:italic;margin-left:1em;" data-ng-hide="quickDisplay">{{game.Notes}}</div>
+	</div>
+</div>

@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="textBoxDescription.Text" xml:space="preserve">
+    <value>에듀케이션 플러스는 교육용 문제 풀기 프로그램으로, 특히 학교 등의 교육 환경에서 사용할 수 있는 소프트웨어입니다.
+.NET Framework 2.0 이상이 설치되어있는 컴퓨터의 경우 문제 파일과 이 실행파일만 있으면 Windows 운영체제가 설치되어있는 어떤 컴퓨터에서든 실행할 수 있습니다.
+또한 Linux용으로 변환한 에듀케이션 플러스 또한 Linux와 Mono Project 2.0 이상이 설치되어있는 어떤 컴퓨터에서도 사용할 수 있습니다.
+
+현재 지원되는 테마는 두가지가 있습니다. 기본적인 테마와 보기가 그림으로 되는 테마가 있습니다. 테마는 테마 에디터(현재는 테스트용 버전입니다)로 간단하게 수정할 수 있으며 파일로 저장한 테마는 불러와서 직접 사용할 수 있습니다.
+
+현재 환경설정은 준비중에 있습니다. 응용프로그램 내에 자료를 저장하는 방법을 구상하고 있습니다.
+
+프로그램의 명령인자에는 다음과 같은 종류가 있습니다.
+
+1. [-pre] [파일명] : 파일을 발표합니다.
+   [/발표] [파일명] : 1번과 같습니다
+2. [-h] : 도움말입니다.
+   [-?] : 2번과 같습니다
+   [/도움말] : 2번과 같습니다
+3. [-opt] : 에듀케이션 플러스의 환경을 설정합니다.
+   [/환경설정] : 3번과 같습니다.
+   [/옵션] : 3번과 같습니다.
+4. [파일명] : 파일을 편집합니다.
+5. [-fserv] : 파일 서버를 엽니다.
+   [/파일서버] : 5번과 같습니다.
+6. [-fcl] : 네트워크 클라이언트 모드로 실행합니다.
+   [/넷클] : 6번과 같습니다.
+7. [-tn] : 팀 네비게이터를 열람합니다.
+   [/팀네비] : 7번과 같습니다.
+
+-----------------------------------------------------
+
+이번 전국 대회용 버전에는 다음 내용들이 추가되었습니다.
+
+1. 파일 서버와 네트워크 클라이언트 기능이 추가되었습니다.
+2. 명령 인자에 3개의 명령어가 추가로 포함됩니다.
+3. 팀 네비게이터를 매인 창에서 수동으로 열람할 수 있습니다.
+4. 팀 네비게이터에서 ESC 키를 누르면 발표가 종료되게 변경하였습니다.
+5. 바로가기 만들기 메뉴가 추가되었습니다. 이 메뉴는 Windows용 바이너리에서만 작동합니다.
+6. 에그제큐터 기능의 애플리케이터를 추가하였습니다. 이 메뉴를 사용하여 만든 파일만 가지고 다녀도 문제 발표를 할 수 있습니다.
+7. 테마 에디터의 아이콘 색상이 변경되었습니다.</value>
+  </data>
+</root>

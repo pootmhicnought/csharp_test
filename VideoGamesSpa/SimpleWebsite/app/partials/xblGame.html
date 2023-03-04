@@ -1,0 +1,39 @@
+﻿<div id="videoGameDetails" class="videoGamesXbl" data-ng-controller="XblGameController">
+	<h2>{{game.Title}} (Xbox)</h2>
+	<div class="lastPlayed">Last played: {{extractDate(game.LastPlayed) | date:'medium'}}</div>
+	<div class="graphic">
+		<img data-ng-src="{{graphicUrl}}" alt="{{game.Title}}" />
+	</div>
+	<div class="details">
+		<div>
+			Gamerscore: {{game.EarnedGamerScore}} of {{game.PossibleGamerScore}} <span class="percent" data-ng-class="percentClass(game.GamerscorePercentage)">({{game.GamerscorePercentage}}%)</span>
+		</div>
+		<div>
+			Achievements: {{game.EarnedAchievements}} of {{game.PossibleAchievements}} <span class="percent" data-ng-class="percentClass(game.AchievementPercentage)">({{game.AchievementPercentage}}%)</span>
+		</div>
+	</div>
+	<div id="accomplishments">
+		<h3>Earned achievements</h3>
+		<ul class="earned">
+			<li data-ng-repeat="achievement in game.Achievements | filter:wasEarned">
+				<strong>{{achievement.Title}}</strong> ({{achievement.GamerScore}})<br />
+				{{achievement.Description}}
+				<span>{{extractDate(achievement.Earned) | date:'medium'}}</span>
+			</li>
+		</ul>
+		<h3>Unearned achievements</h3>
+		<ul class="unearned">
+			<li data-ng-repeat="achievement in game.Achievements | filter:notEarned" data-ng-click="testItem(achievement)" data-ng-class="testEnabled(achievement.Id)">
+				<strong>{{secretTitle(achievement)}}</strong> ({{achievement.GamerScore}})<br />
+				{{achievement.Description}}
+			</li>
+		</ul>
+		<h3>Experimentation</h3>
+		<p>
+			Points percentage: {{game.GamerscorePercentage}}% &gt; <span id="pointsPercentage">{{test.newPointsPercent}}</span>% <span id="pointsChange">{{newPoints()}}</span>
+			<br />
+			Accomplishments: {{game.AchievementPercentage}}% &gt; <span id="itemsPercentage">{{test.newItemsPercent}}</span>% <span id="itemsChange">{{newItems()}}</span>
+		</p>
+	</div>
+	<p><a href="#/basics/xbl">Back to List</a></p>
+</div>

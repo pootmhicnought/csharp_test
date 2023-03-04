@@ -1,0 +1,46 @@
+﻿<div id="videoGameDetails" class="videoGamesPsn" data-ng-controller="PsnGameController">
+	<h2>{{game.Title}} ({{platform}})</h2>
+	<div class="lastPlayed">Last played: {{extractDate(game.LastPlayed) | date:'medium'}}</div>
+	<div class="graphic">
+		<img data-ng-src="{{graphicUrl}}" alt="{{game.Title}}" />
+	</div>
+	<div class="details">
+		<div>
+			Points: {{game.EarnedPoints}} of {{game.PossiblePoints}} <span class="percent" data-ng-class="percentClass(game.PointsPercentage)">({{game.PointsPercentage}}%)</span>
+		</div>
+		<div>
+			Trophies: {{game.EarnedTrophies}} of {{game.PossibleTrophies}} <span class="percent" data-ng-class="percentClass(game.TrophyPercentage)">({{game.TrophyPercentage}}%)</span><br />
+			{{game.EarnedBronze}}
+			/
+			{{game.EarnedSilver}}
+			/
+			{{game.EarnedGold}}
+			/
+			{{game.EarnedPlatinum}}
+		</div>
+	</div>
+	<div id="accomplishments">
+		<h3>Earned Trophies</h3>
+		<ul class="earned">
+			<li data-ng-repeat="trophy in game.Trophies | filter:wasEarned | orderBy:'Earned':true">
+				<strong>{{trophy.Title}}</strong> ({{trophy.Type}})<br />
+				{{trophy.Description}}
+				<span>{{extractDate(trophy.Earned) | date:'medium'}}</span>
+			</li>
+		</ul>
+		<h3>Unearned Trophies</h3>
+		<ul class="unearned">
+			<li data-ng-repeat="trophy in game.Trophies | filter:notEarned" data-ng-click="testItem(trophy)" data-ng-class="testEnabled(trophy.Id)">
+				<strong>{{trophy.Title}}</strong> ({{trophy.Type}})<br />
+				{{trophy.Description}}
+			</li>
+		</ul>
+		<h3>Experimentation</h3>
+		<p>
+			Points percentage: {{game.PointsPercentage}}% &gt; <span id="pointsPercentage">{{test.newPointsPercent}}</span>% <span id="pointsChange">{{newPoints()}}</span>
+			<br />
+			Accomplishments: {{game.TrophyPercentage}}% &gt; <span id="itemsPercentage">{{test.newItemsPercent}}</span>% <span id="itemsChange">{{newItems()}}</span>
+		</p>
+	</div>
+	<p><a href="#/basics/psn">Back to List</a></p>
+</div>
